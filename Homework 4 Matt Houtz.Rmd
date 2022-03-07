@@ -9,7 +9,7 @@ knit: (function(input_file, encoding) {
  output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 ---
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #load packages
 library(tidyverse)
 library(knitr)
@@ -46,9 +46,12 @@ players.table <- players.2020 %>%
                     ),
             fillContainer = T
             )
-  
+```
 
+
+```{r}
 players.table
 ```
+
 
 
