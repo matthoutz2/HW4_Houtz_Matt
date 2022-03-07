@@ -43,9 +43,7 @@ players.table <- players.2020 %>%
                     "Assists",
                     "Yellow Cards",
                     "Red Cards"
-                    ),
-            fillContainer = T
-            )
+                    ))
 ```
 
 
