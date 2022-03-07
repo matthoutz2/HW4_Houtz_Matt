@@ -43,7 +43,13 @@ players.table <- players.2020 %>%
                     "Assists",
                     "Yellow Cards",
                     "Red Cards"
-                    ))
+                    ),
+            options = list(
+  initComplete = JS(
+    "function(settings, json) {",
+    "$(this.api().table().header()).css({'background-color': '#47004C', 'color': '#fff'});",
+    "}")
+))
 ```
 
 
