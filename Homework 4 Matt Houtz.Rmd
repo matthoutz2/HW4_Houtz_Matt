@@ -1,0 +1,54 @@
+---
+title: "566 Homework 4 Tables"
+author: "Matt Houtz"
+output: html_document
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+---
+
+```{r}
+#load packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(DT)
+```
+
+
+```{r}
+#Read in Data
+players.2020 <- read.csv("C:/Users/matth/Documents/Grad School/Spring 2022/STAA 566/Data/pl_2020.csv")
+
+#Remove unused columns
+players.2020 <- players.2020[c("Player", "Country", "Pos", "Squad", "Age", "MP", "Starts", "Min", "Gls.", "Ast", "CrdY", "CrdR")]
+```
+
+```{r}
+#Create Table
+players.table <- players.2020 %>%
+  select(Player, Age, Country, Pos, Squad, MP, Starts, Min, Gls., Ast, CrdY, CrdR) %>%
+  datatable(class = 'cell-border stripe',
+            colnames = c("Player",
+                    "Age",
+                    "Country",
+                    "Posistion",
+                    "Squad",
+                    "Played",
+                    "Started",
+                    "Minutes",
+                    "Goals",
+                    "Assists",
+                    "Yellow Cards",
+                    "Red Cards"
+                    ),
+            fillContainer = T
+            )
+  
+
+players.table
+```
+
+
