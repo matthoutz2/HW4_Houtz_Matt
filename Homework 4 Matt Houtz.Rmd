@@ -9,7 +9,7 @@ knit: (function(input_file, encoding) {
  output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 ---
 
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
 #load packages
 library(tidyverse)
 library(knitr)
@@ -56,6 +56,26 @@ players.table <- players.2020 %>%
 ```{r}
 players.table
 ```
+
+# About the Table
+
+## Data Source
+
+Original data can be found here https://fbref.com/en/comps/9/10728/keepersadv/2020-2021-Premier-League-Stats, where I took the table of player data and then cleaned it and consolidated the countries since the original data had some player countries listed that were not countries (Scotland, Wales, Northern Ireland).
+
+## What I wanted to Convey in the Table
+
+I hoped to make a presentable table with a search function so that anyone who is interested in premiere league results could quickly view common information about teams and sort by any information that they wanted. I included information that is typically of interest to me when I am looking at player statistics, so I would assume that they are the statistics that most people are interested in.
+
+## Functionality
+
+I created the table with the DT package since it had a built-in search bar that searches the entire table which I figured would be useful for if someone wanted to search by player name, country, team, or age, they would be able to do that all from just one search bar. The datatable also had built in sort options in the header area which can also be very useful for many of the statistics since it will alphabetize charater columns and then sort high to low for numeric columns.
+
+## Formatting
+
+I added cell border lines since it made the table more legible for me, and it also added different shading for alternating rows which makes it easier to follow the information all the way across. I also changed the background of the header row to be as close to the Premier League logo color as my colorblind eyes could get it.
+
+
 
 
 
